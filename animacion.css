@@ -1,0 +1,142 @@
+/* ========== ANIMACIÓN SLIDE-IN PARA GASTRONOMÍA========== */
+@keyframes slide-in {
+  from {
+    scale: 0.85;
+    rotate: calc((var(--side, 1) * (5deg * var(--amp, 1))));
+  }
+}
+
+.card-animation-layer {
+  @media (prefers-reduced-motion: no-preference) {
+    @supports (animation-timeline: view()) {
+      animation: slide-in linear both;
+      animation-timeline: view();
+      animation-range: cover 0% contain 15%;
+    }
+  }
+}
+
+.dish-grid-4x4 {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 2rem;
+}
+
+.dish-grid-4x4 > .card-animation-layer {
+  display: grid;
+  gap: 0;
+}
+
+/* Responsive: móvil (1 columna) */
+@media (max-width: 719px) {
+  .dish-grid-4x4 {
+    grid-template-columns: 1fr;
+  }
+  .dish-grid-4x4 > .card-animation-layer:nth-of-type(odd) { transform-origin: 25vw 100%; --side: -1; --amp: 1; }
+  .dish-grid-4x4 > .card-animation-layer:nth-of-type(even) { transform-origin: -25vw 100%; --side: 1; --amp: 1; }
+}
+
+/* Responsive: tablet (2 columnas) */
+@media (min-width: 720px) and (max-width: 1199px) {
+  .dish-grid-4x4 {
+    grid-template-columns: repeat(2, 1fr);
+  }
+  .dish-grid-4x4 > .card-animation-layer:nth-of-type(4n + 1) { transform-origin: 50vw 100%; --side: -1; --amp: 2; }
+  .dish-grid-4x4 > .card-animation-layer:nth-of-type(4n + 2) { transform-origin: 25vw 100%; --side: -1; --amp: 1; }
+  .dish-grid-4x4 > .card-animation-layer:nth-of-type(4n + 3) { transform-origin: -25vw 100%; --side: 1; --amp: 1; }
+  .dish-grid-4x4 > .card-animation-layer:nth-of-type(4n) { transform-origin: -50vw 100%; --side: 1; --amp: 2; }
+}
+
+/* Desktop: 4 columnas - patrón cada 4 tarjetas (para que la segunda fila se comporte igual que la primera) */
+@media (min-width: 1200px) {
+  /* Tarjeta 1, 5, 9... */
+  .dish-grid-4x4 > .card-animation-layer:nth-of-type(4n + 1) { transform-origin: 75vw 100%; --side: -1; --amp: 3; }
+  /* Tarjeta 2, 6, 10... */
+  .dish-grid-4x4 > .card-animation-layer:nth-of-type(4n + 2) { transform-origin: 25vw 100%; --side: -1; --amp: 1; }
+  /* Tarjeta 3, 7, 11... */
+  .dish-grid-4x4 > .card-animation-layer:nth-of-type(4n + 3) { transform-origin: -25vw 100%; --side: 1; --amp: 1; }
+  /* Tarjeta 4, 8, 12... */
+  .dish-grid-4x4 > .card-animation-layer:nth-of-type(4n + 4) { transform-origin: -75vw 100%; --side: 1; --amp: 3; }
+}
+
+/* Mantener estilos de las tarjetas */
+.card-animation-layer .dish-card-grid {
+  height: 100%;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.card-animation-layer .dish-card-grid:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 20px 30px rgba(0, 0, 0, 0.3);
+}
+
+/* ========== GALERÍA 3D INTERACTIVA ========== */
+.gallery-stage {
+  position: relative;
+  width: 100%;
+  height: 80vh;            /* Altura de la galería */
+  min-height: 600px;
+  background: #000;
+  overflow: hidden;
+  margin-top: 2rem;
+  border-radius: 30px;
+  perspective: 800px;
+}
+
+.mainBoxes {
+  position: absolute;
+  left: 75%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  width: 1200px;
+  height: auto;
+  transform-style: preserve-3d;
+}
+
+.mainClose {
+  position: fixed;         /* Para seguir el cursor */
+  width: 60px;
+  height: 60px;
+  left: -30px;
+  top: -31px;
+  cursor: pointer;
+  opacity: 0;
+  visibility: hidden;
+  z-index: 1000;
+  transition: visibility 0s linear 0.3s;
+  pointer-events: none;
+}
+
+.mainClose svg {
+  display: block;
+}
+
+/* Cada foto (generada por JS) */
+.photoBox {
+  position: absolute;
+  cursor: pointer;
+  border-radius: 20px;
+  overflow: hidden;
+  box-shadow: 0 20px 30px rgba(0,0,0,0.3);
+  background-size: cover;
+  background-position: center;
+  will-change: transform;
+  opacity: 0;  /* se mostrará al inicio de la animación */
+}
+
+/* Ajuste responsivo */
+@media (max-width: 900px) {
+  .gallery-stage {
+    height: 70vh;
+    min-height: 500px;
+  }
+  .mainBoxes {
+    width: 900px;
+  }
+}
+@media (max-width: 700px) {
+  .mainBoxes {
+    width: 700px;
+  }
+}
+

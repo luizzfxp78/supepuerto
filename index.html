@@ -1,0 +1,578 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <meta name="description" content="Descubre Supe Puerto, Perú. Cultura, gastronomía, playas y tradición en una experiencia visual premium."/>
+  
+  <title>Supe Puerto | Turismo Premium</title>
+
+  <!-- Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;600;700&family=Poppins:wght@300;400;500;600&display=swap" rel="stylesheet">
+
+  <!-- Swiper -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css"/>
+
+  <!-- Leaflet -->
+  <link rel="stylesheet" href="https://unpkg.com/leaflet/dist/leaflet.css"/>
+
+  <link rel="stylesheet" href="style.css"/>
+  <link rel="stylesheet" href="animacion.css"/>
+</head>
+
+<body>
+
+  <!-- NAVBAR -->
+  <header class="header">
+    <nav class="navbar container">
+      <div class="logo">Supe Puerto</div>
+
+      <ul class="nav-links">
+        <li><a href="#inicio">Inicio</a></li>
+        <li><a href="#historia">Historia</a></li>
+        <li><a href="#gastronomia">Gastronomía</a></li>
+        <li><a href="#turismo">Turismo</a></li>
+        <li><a href="#tradiciones">Tradiciones</a></li>
+        <li><a href="#mitos">Mitos</a></li>
+        <li><a href="#galeria">Galería</a></li>
+        <li><a href="#contacto">Contacto</a></li>
+      </ul>
+
+      <div class="hamburger">
+        <span></span>
+        <span></span>
+        <span></span>
+      </div>
+    </nav>
+  </header>
+
+  <!-- HERO -->
+  <section class="hero" id="inicio">
+
+    <div class="swiper heroSwiper">
+      <div class="swiper-wrapper">
+
+        <div class="swiper-slide hero-slide slide1"></div>
+        <div class="swiper-slide hero-slide slide2"></div>
+        <div class="swiper-slide hero-slide slide3"></div>
+
+      </div>
+    </div>
+
+    <div class="hero-overlay"></div>
+
+    <div class="hero-content">
+      <h1>Supe Puerto</h1>
+      <p>
+        Donde el océano, la tradición y la cultura peruana
+        crean una experiencia inolvidable.
+      </p>
+
+      <a href="#historia" class="btn-primary">
+        Explorar destino
+      </a>
+    </div>
+
+  </section>
+
+  <!-- HISTORIA -->
+  <section class="history section" id="historia">
+  <div class="container">
+    <!-- Nuevo encabezado -->
+    <div class="history-header">
+      <span class="section-tag">NUESTRA HISTORIA</span>
+      <h2>Un viaje a través de 5000 años</h2>
+      <p class="history-subtext">
+        Desde la cuna de la civilización andina hasta el puerto pesquero vivo que late hoy con orgullo peruano.
+      </p>
+    </div>
+
+    <!-- Línea de tiempo: botones con fechas -->
+    <div class="timeline-buttons">
+      <button class="timeline-btn active" data-period="caral">3700 a.C.</button>
+      <button class="timeline-btn" data-period="japones">1905 d.C.</button>
+      <button class="timeline-btn" data-period="fundacion">1940 d.C.</button>
+      <button class="timeline-btn" data-period="turismo">1994 d.C.</button>
+      <button class="timeline-btn" data-period="hoy">Hoy</button>
+    </div>
+
+    <!-- Contenedor dinámico (imagen + texto) -->
+    <div class="history-grid" id="historyDynamic">
+      <div class="history-image">
+        <img id="historyImg" src="img/historia/aspero.jpg" alt="Historia de Supe Puerto" loading="lazy">
+      </div>
+      <div class="history-content">
+        <span class="section-tag">Capítulo histórico</span>
+        <h2 id="historyTitle">Los Orígenes de Áspero</h2>
+        <div class="line"></div>
+        <p id="historyDesc">
+          Supe Puerto es reconocido como la puerta de entrada a Áspero, importante ciudad pesquera vinculada a la Civilización Caral, considerada una de las culturas más antiguas de América con más de 5000 años de historia. Desde este puerto ancestral se desarrollaron actividades de pesca, intercambio comercial y organización social que contribuyeron al crecimiento de una civilización avanzada en agricultura, astronomía y arquitectura monumental en la costa central del Perú.
+        </p>
+        <div class="history-chapter">
+          <span id="chapterCounter">1</span> de 5 capítulos históricos
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+<!-- ========== GASTRONOMÍA ========== -->
+<section class="gastronomy section-dark" id="gastronomia">
+  <div class="container">
+    <!-- Encabezado estilo imagen -->
+    <div class="gastronomy-header">
+      <span class="section-tag">SABORES DEL PACÍFICO</span>
+      <h2>Gastronomía Porteña</h2>
+      <p class="gastronomy-subtitle">
+        El mar como ingrediente principal. Recetas transmitidas por generaciones de pescadores,<br>
+        donde cada plato cuenta una historia de amor por el océano.
+      </p>
+    </div>
+
+    <!-- Grid de tarjetas (4x4 responsivo) con animación escalonada -->
+    <div class="dish-grid-4x4">
+
+      <!-- 1. Ceviche -->
+      <div class="card-animation-layer">
+        <div class="dish-card-grid">
+          <div class="dish-img-grid">
+            <img src="img/gastronomia/ceviche.jpg" alt="Ceviche">
+          </div>
+          <div class="dish-info-grid">
+            <span class="dish-badge">Clásico Marino</span>
+            <h3>Ceviche</h3>
+            <p>Pescado fresco del Pacífico marinado en limón con ají limo, cebolla morada y cilantro. Preparado al momento con pescado recién llegado del muelle.</p>
+            <div class="dish-meta-grid">
+              <span>⏱️ 15 min</span>
+              <span>🐟 Tradición pesquera local</span>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- 2. Chicharrón de pescado -->
+      <div class="card-animation-layer">
+        <div class="dish-card-grid">
+          <div class="dish-img-grid">
+            <img src="img/gastronomia/chicharron.jpg" alt="Chicharrón de pescado">
+          </div>
+          <div class="dish-info-grid">
+            <span class="dish-badge">Tradición Local</span>
+            <h3>Chicharrón de pescado</h3>
+            <p>Trozos de pescado recién llegado del muelle, fritos hasta quedar dorados y crocantes. Acompañados de yuca y salsa criolla.</p>
+            <div class="dish-meta-grid">
+              <span>⏱️ 20 min</span>
+              <span>🔥 Crujiente y fresco</span>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- 3. Arroz con mariscos -->
+      <div class="card-animation-layer">
+        <div class="dish-card-grid">
+          <div class="dish-img-grid">
+            <img src="img/gastronomia/arroz.jpg" alt="Arroz con mariscos">
+          </div>
+          <div class="dish-info-grid">
+            <span class="dish-badge">Especialidad</span>
+            <h3>Arroz con mariscos</h3>
+            <p>Arroz mezclado con calamares, conchas, camarones y pescado. Sabor intenso a mar con toques de ají amarillo y culantro.</p>
+            <div class="dish-meta-grid">
+              <span>⏱️ 25 min</span>
+              <span>🍚 Plato fuerte</span>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- 4. Parihuela -->
+      <div class="card-animation-layer">
+        <div class="dish-card-grid">
+          <div class="dish-img-grid">
+            <img src="img/gastronomia/parihuela.jpg" alt="Parihuela">
+          </div>
+          <div class="dish-info-grid">
+            <span class="dish-badge">Sopa Marina</span>
+            <h3>Parihuela</h3>
+            <p>Potente sopa con pescado, camarones, calamares y cangrejo, aderezada con ají panca y hierbas aromáticas.</p>
+            <div class="dish-meta-grid">
+              <span>⏱️ 30 min</span>
+              <span>🍲 Caldo reconstituyente</span>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- 5. Sudado de pescado -->
+      <div class="card-animation-layer">
+        <div class="dish-card-grid">
+          <div class="dish-img-grid">
+            <img src="img/gastronomia/sudado.jpg" alt="Sudado de pescado">
+          </div>
+          <div class="dish-info-grid">
+            <span class="dish-badge">Aromático</span>
+            <h3>Sudado de pescado</h3>
+            <p>Pescado entero cocido al vapor en caldo de cebolla, tomate, ají panca y un toque de vino de pisco.</p>
+            <div class="dish-meta-grid">
+              <span>⏱️ 25 min</span>
+              <span>🌿 Aroma del mar</span>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- 6. Chilcano -->
+      <div class="card-animation-layer">
+        <div class="dish-card-grid">
+          <div class="dish-img-grid">
+            <img src="img/gastronomia/chilcano.jpg" alt="Chilcano">
+          </div>
+          <div class="dish-info-grid">
+            <span class="dish-badge">Reconfortante</span>
+            <h3>Chilcano</h3>
+            <p>Sopa de pescado o cangrejo con un toque de jengibre, huevo y fideos finos. Ideal para recuperar energías.</p>
+            <div class="dish-meta-grid">
+              <span>⏱️ 20 min</span>
+              <span>🥣 Tradicional</span>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- 7. Reventado de Cangrejo -->
+      <div class="card-animation-layer">
+        <div class="dish-card-grid">
+          <div class="dish-img-grid">
+            <img src="img/gastronomia/reventado.jpg" alt="Reventado de cangrejo">
+          </div>
+          <div class="dish-info-grid">
+            <span class="dish-badge">Marisco Puro</span>
+            <h3>Reventado de Cangrejo</h3>
+            <p>Cangrejos frescos abiertos y cocidos en una cremosa salsa de ají amarillo, cebolla y culantro.</p>
+            <div class="dish-meta-grid">
+              <span>⏱️ 35 min</span>
+              <span>🦀 Especialidad local</span>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- 8. Picante de Yuyo -->
+      <div class="card-animation-layer">
+        <div class="dish-card-grid">
+          <div class="dish-img-grid">
+            <img src="img/gastronomia/picante.jpg" alt="Picante de yuyo">
+          </div>
+          <div class="dish-info-grid">
+            <span class="dish-badge">Preincaico</span>
+            <h3>Picante de Yuyo</h3>
+            <p>Alga marina fresca (yuyo) cocinada con ají, cebolla y papa. Un plato ancestral lleno de minerales.</p>
+            <div class="dish-meta-grid">
+              <span>⏱️ 15 min</span>
+              <span>🌱 Vegetariano ancestral</span>
+            </div>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+  <!-- LUGARES TURÍSTICOS -->
+<section class="tourism section" id="turismo">
+  <div class="container">
+    <!-- Encabezado estilo imagen -->
+    <div class="tourism-header">
+      <span class="section-tag">DESCUBRE EL DESTINO</span>
+      <h2>Lugares Turísticos</h2>
+      <p class="tourism-subtitle">
+        Desde playas doradas hasta ruinas milenarias. Cada rincón de Supe Puerto guarda una historia que espera ser descubierta.
+      </p>
+    </div>
+
+    <!-- Botones de filtro -->
+    <div class="filter-buttons">
+      <button class="filter-btn active" data-filter="todos">Todos</button>
+      <button class="filter-btn" data-filter="arqueologicos">Arqueológicos</button>
+      <button class="filter-btn" data-filter="playas">Playas</button>
+      <button class="filter-btn" data-filter="paseos">Paseos</button>
+      <button class="filter-btn" data-filter="naturaleza">Naturaleza</button>
+      <button class="filter-btn" data-filter="residencias">Residencias Históricas</button>
+    </div>
+
+    <!-- Grid dinámico donde se inyectarán las tarjetas -->
+    <div id="places-grid" class="places-grid"></div>
+  </div>
+</section>
+
+<!-- ========== TRADICIONES Y FESTIVIDADES (SIN ANIMACIÓN SCROLL) ========== -->
+<section class="traditions section" id="tradiciones">
+  <div class="container">
+    <!-- Encabezado -->
+    <div class="traditions-header">
+      <span class="section-tag">COSTUMBRES Y TRADICIONES</span>
+      <h2>Costumbres y Tradiciones</h2>
+      <p class="traditions-subtitle">
+        La cultura supeña no se lee en libros, se vive en cada danza, cada canción y cada madrugada en el muelle.
+      </p>
+    </div>
+
+    <!-- Listado de tradiciones (imagen izquierda / derecha alternada) -->
+    <div class="traditions-list">
+      
+      <!-- 1. Fiesta de San Pedro y San Pablo (imagen izquierda) -->
+      <div class="tradition-block">
+        <div class="tradition-image">
+          <img src="img/festividad/san_pedro.jpg" alt="Fiesta de San Pedro y San Pablo" loading="lazy">
+        </div>
+        <div class="tradition-content">
+          <span class="tradition-date">29-30 de Junio</span>
+          <h3>Fiesta de San Pedro y San Pablo</h3>
+          <div class="line"></div>
+          <p>La festividad más importante del puerto. Pescadores y familias celebran a los santos patronos con procesiones en el mar sobre balsas adornadas, misas en la playa, danzas tradicionales y la famosa comida de santo. Los botes forman una procesión náutica que recorre la bahía al amanecer.</p>
+        </div>
+      </div>
+
+      <!-- 2. La cruz de Motupe (imagen derecha) -->
+      <div class="tradition-block reverse">
+        <div class="tradition-image">
+          <img src="img/festividad/cruz_motupe.jpg" alt="La cruz de Motupe" loading="lazy">
+        </div>
+        <div class="tradition-content">
+          <span class="tradition-date">Agosto</span>
+          <h3>La cruz de Motupe</h3>
+          <div class="line"></div>
+          <p>Devoción religiosa que atrae a miles de fieles. Se venera la cruz hallada en el cerro de Motupe, con procesiones, danzas y promesas. En Supe Puerto, se realiza una réplica de la romería costeña.</p>
+        </div>
+      </div>
+
+      <!-- 3. Semana Santa (imagen izquierda) -->
+      <div class="tradition-block">
+        <div class="tradition-image">
+          <img src="img/festividad/semana_santa.jpg" alt="Semana Santa" loading="lazy">
+        </div>
+        <div class="tradition-content">
+          <span class="tradition-date">Marzo o Abril</span>
+          <h3>Semana Santa</h3>
+          <div class="line"></div>
+          <p>Procesiones solemnes, alfombras de flores y la tradicional pesca del viernes santo. Las familias supeñas preparan platos de vigilia y recorren el malecón en reflexión.</p>
+        </div>
+      </div>
+
+      <!-- 4. Aniversario de Supe Puerto (imagen derecha) -->
+      <div class="tradition-block reverse">
+        <div class="tradition-image">
+          <img src="img/festividad/aniversario.jpg" alt="Aniversario de Supe Puerto" loading="lazy">
+        </div>
+        <div class="tradition-content">
+          <span class="tradition-date">28 de Noviembre</span>
+          <h3>Aniversario de Supe Puerto</h3>
+          <div class="line"></div>
+          <p>Celebración cívica con desfile, elección de reina, conciertos, ferias gastronómicas y deportes. Se conmemora la creación política del distrito, con gran participación vecinal.</p>
+        </div>
+      </div>
+
+      <!-- 5. Bendición de embarcaciones (imagen izquierda) -->
+      <div class="tradition-block">
+        <div class="tradition-image">
+          <img src="img/festividad/bendicion.jpg" alt="Bendición de embarcaciones" loading="lazy">
+        </div>
+        <div class="tradition-content">
+          <span class="tradition-date">Febrero / Inicio de temporada</span>
+          <h3>Bendición de embarcaciones</h3>
+          <div class="line"></div>
+          <p>Ritual ancestral donde los pescadores adornan sus botes y un sacerdote bendice las herramientas de trabajo. Se pide buena pesca y protección en el mar.</p>
+        </div>
+      </div>
+
+      <!-- 6. Pesca Artesanal (imagen derecha) -->
+      <div class="tradition-block reverse">
+        <div class="tradition-image">
+          <img src="img/festividad/pesca.jpg" alt="Pesca Artesanal" loading="lazy">
+        </div>
+        <div class="tradition-content">
+          <span class="tradition-date">Diariamente (tradición viva)</span>
+          <h3>Pesca Artesanal</h3>
+          <div class="line"></div>
+          <p>El alma del puerto. Los pescadores salen al amanecer en pequeñas embarcaciones usando redes y anzuelos. Técnicas transmitidas por generaciones, con respeto al ciclo marino.</p>
+        </div>
+      </div>
+
+      <!-- 7. Artesanías con Conchas marinas (imagen izquierda) -->
+      <div class="tradition-block">
+        <div class="tradition-image">
+          <img src="img/festividad/artesania.jpg" alt="Artesanías con conchas marinas" loading="lazy">
+        </div>
+        <div class="tradition-content">
+          <span class="tradition-date">Todo el año</span>
+          <h3>Artesanías con Conchas marinas</h3>
+          <div class="line"></div>
+          <p>Mujeres y jóvenes del puerto elaboran collares, pulseras, lámparas y figuras decorativas con conchas, caracolas y estrellas de mar. Una expresión de creatividad y economía circular.</p>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+  <!-- MITOS -->
+<!-- MITOS Y LEYENDAS - TABS HORIZONTALES -->
+<section class="myths section-dark" id="mitos">
+  <div class="container">
+    <div class="section-header">
+      <span class="section-tag">Misterio</span>
+      <h2>Mitos y Leyendas</h2>
+      <p class="myths-subtitle">Relatos ancestrales que envuelven la noche de Supe Puerto entre el mar y la tradición.</p>
+    </div>
+  </div>
+
+  <div class="myths-tabs">
+    <!-- Botones / pestañas horizontales -->
+    <div class="tabs-nav">
+      <button class="tab-btn active" data-tab="tab1">Las 3 llamas de oro perdidas</button>
+      <button class="tab-btn" data-tab="tab2">La llorona</button>
+      <button class="tab-btn" data-tab="tab3">Los ahogados</button>
+      <button class="tab-btn" data-tab="tab4">El Caballero de la Playa</button>
+    </div>
+
+    <!-- Contenedor de contenidos -->
+    <div class="tabs-content">
+      <div class="tab-pane active" id="tab1">
+        <div class="tab-inner">
+          <img src="img/leyenda/llama.jpg" alt="Las 3 llamas de oro perdidas" onerror="this.src='https://placehold.co/600x400/1e293b/14b8c4?text=Las+3+llamas+de+oro'">
+          <p>Cuenta la leyenda que tres llamas de oro macizo fueron escondidas por los antiguos pescadores para protegerlas de los conquistadores. Quien logre encontrar las tres será bendecido con la fortuna del mar, pero deberá enfrentar las pruebas del viento y la marea.</p>
+        </div>
+      </div>
+      <div class="tab-pane" id="tab2">
+        <div class="tab-inner">
+          <img src="img/leyenda/llorona.jpg" alt="La llorona" onerror="this.src='https://placehold.co/600x400/1e293b/14b8c4?text=La+Llorona'">
+          <p>En las noches de luna llena, los pescadores escuchan el lamento de una mujer que recorre el malecón. Dicen que es el alma de una madre que perdió a sus hijos en el mar y ahora busca consuelo entre las olas. Quien la vea deberá lanzar una flor al agua para calmar su pena.</p>
+        </div>
+      </div>
+      <div class="tab-pane" id="tab3">
+        <div class="tab-inner">
+          <img src="img/leyenda/ahogado.jpg" alt="Los ahogados" onerror="this.src='https://placehold.co/600x400/1e293b/14b8c4?text=Los+Ahogados'">
+          <p>Se dice que las almas de los pescadores que murieron en naufragios regresan en las noches de tormenta. Se aparecen como sombras que caminan sobre el agua pidiendo una oración. Si un bote se acerca demasiado, pueden confundir a los vivos y arrastrarlos al fondo.</p>
+        </div>
+      </div>
+      <div class="tab-pane" id="tab4">
+        <div class="tab-inner">
+          <img src="img/leyenda/caballero.jpg" alt="El Caballero de la Playa" onerror="this.src='https://placehold.co/600x400/1e293b/14b8c4?text=Caballero+de+la+Playa'">
+          <p>Una antigua leyenda habla de un jinete sin cabeza que recorre las playas desiertas en las madrugadas. Monta un corcel blanco y lleva una armadura brillante. Quien lo encuentre debe responder a su enigma o será condenado a vagar con él por la orilla eternamente.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+<!-- SECCIÓN GALERÍA CON ANIMACIÓN 3D -->
+<section class="gallery section" id="galeria">
+  <div class="container">
+    <div class="section-header">
+      <span class="section-tag">Visual</span>
+      <h2>Galería</h2>
+    </div>
+  </div>
+
+  <!-- Contenedor principal de la animación (dentro de section, pero fuera de container para aprovechar ancho completo) -->
+  <div class="gallery-stage">
+    <div class="mainBoxes"></div>
+    <div class="mainClose">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 60 60" width="100%" height="100%">
+        <circle cx="30" cy="30" r="30" fill="#000" opacity="0.4" />
+        <path d="M15,16L45,46 M45,16L15,46" stroke="#000" stroke-width="3.5" opacity="0.5" />
+        <path d="M15,15L45,45 M45,15L15,45" stroke="#fff" stroke-width="2" />
+      </svg>
+    </div>
+  </div>
+</section>
+
+  <!-- MAPA -->
+  <section class="map-section section">
+
+    <div class="container">
+
+      <div class="section-header">
+        <span class="section-tag">Ubicación</span>
+        <h2>Mapa Interactivo</h2>
+      </div>
+
+      <div id="map"></div>
+
+    </div>
+
+  </section>
+
+  <!-- VIAJE -->
+  <section class="travel section-dark">
+
+    <div class="container">
+
+      <div class="section-header">
+        <span class="section-tag">Planifica</span>
+        <h2>Tu Viaje</h2>
+      </div>
+
+      <div class="travel-grid">
+
+        <div class="travel-card">
+          <h3>Hospedaje</h3>
+          <p>Opciones cómodas cerca del mar.</p>
+        </div>
+
+        <div class="travel-card">
+          <h3>Transporte</h3>
+          <p>Acceso rápido desde Lima.</p>
+        </div>
+
+        <div class="travel-card">
+          <h3>Mejor época</h3>
+          <p>Verano y temporadas festivas.</p>
+        </div>
+
+      </div>
+
+    </div>
+
+  </section>
+
+  <!-- FOOTER -->
+  <footer class="footer" id="contacto">
+
+    <div class="container footer-grid">
+
+      <div>
+        <h3>Supe Puerto</h3>
+        <p>Destino turístico cultural y marino del Perú.</p>
+      </div>
+
+      <div>
+        <h4>Links</h4>
+        <ul>
+          <li><a href="#">Inicio</a></li>
+          <li><a href="#">Historia</a></li>
+          <li><a href="#">Turismo</a></li>
+        </ul>
+      </div>
+
+      <div>
+        <h4>Contacto</h4>
+        <p>Perú - Barranca</p>
+      </div>
+
+    </div>
+
+  </footer>
+
+  <!-- Scripts -->
+  <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+
+  <script src="https://unpkg.com/leaflet/dist/leaflet.js"></script>
+
+  <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+
+  <script src="script.js"></script>
+  <script src="animacion.js"></script>
+
+</body>
+</html>
